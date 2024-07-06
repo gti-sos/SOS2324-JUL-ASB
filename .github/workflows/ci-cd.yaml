@@ -17,6 +17,7 @@ jobs:
     needs: [test]
     runs-on: ubuntu-latest
     environment: production
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -25,21 +26,33 @@ jobs:
         env:
           GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
         run: |
-          gcloud auth activate-service-account --key-file=$GOOGLE_APPLICATION_CREDENTIALS
+          echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}" > /tmp/credentials.json
+          gcloud auth activate-service-account --key-file=/tmp/credentials.json
 
       - name: Set up Google Cloud SDK
         uses: google-github-actions/setup-gcloud@v1
         with:
           project_id: 'sos2324-jul-asb'
 
-      - name: 'Use gcloud CLI'
-        run: 'gcloud info'
+      - name: Use gcloud CLI
+        run: gcloud info
 
-      - run: npm install echarts
-      - run: cd front; npm install; cd ..
-      - run: cd front; npm run build; cd ..
+      - name: Install npm dependencies
+        run: npm install echarts
 
-      - name : 'Deploy'
-        run: gcloud app deploy
+      - name: Install frontend dependencies
+        run: |
+          cd front
+          npm install
+          cd ..
+
+      - name: Build frontend
+        run: |
+          cd front
+          npm run build
+          cd ..
+
+      - name: Deploy to App Engine
+        run: gcloud app deploy --quiet
 
 

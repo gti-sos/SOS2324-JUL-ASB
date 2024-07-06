@@ -1,0 +1,40 @@
+name: CI / CD
+on: [push]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm install echarts
+      - run: cd front; npm install; cd ..
+      - run: cd front; npm run build; cd ..
+      - run: npm install
+      - run: npx playwright install --with-deps
+      - run: npm test
+
+
+  deploy:
+    needs: [test]
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+      - id: 'auth'
+        uses: 'google-github-actions/auth@v1'
+        with:
+          credentials_json: '${{ secrets.GCP_SA_KEY_JSON}}'
+
+      - name: 'Set up Cloud SDK'
+        uses: 'google-github-actions/setup-gcloud@v1'
+      
+      - name: 'Use gcloud CLI'
+        run: 'gcloud info'
+
+      - run: npm install echarts
+      - run: cd front; npm install; cd ..
+      - run: cd front; npm run build; cd ..
+
+      - name : 'Deploy'
+        run: gcloud app deploy
+
+

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto SOS2324-10</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f7ff; /* Azul claro */
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            background-color: #fff; /* Blanco */
+            border: 1px solid #a4caef; /* Azul claro */
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: #0366d6; /* Azul */
+        }
+
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            background-color: #f0f7ff; /* Azul claro */
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        a {
+            color: #0366d6; /* Azul */
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Proyecto SOS2324-JUL-ASB</h1>
+        <ul>
+            <li>Antonio Suero Baeza</li>
+        </ul>
+        <p>Descripción del proyecto: Nuestro proyecto se basa en analizar cómo afecta el PIB a los vehículos en Europa.</p>
+        <p>Repositorio: <a href="https://github.com/gti-sos/SOS2324-JUL-ASB">gti-sos/SOS2324-JUL-ASB</a></p>
+        <p>URL: <a href="https://sos2324-10.appspot.com/"></a></p>
+        <h2>API:</h2>
+        <ul>
+            <li>API Antonio: <a href="http://sos2324-10.appspot.com/api/v1/cars-by-motor"> cars-by-motor-v1</a>, <a href="http://sos2324-10.appspot.com/api/v2/cars-by-motor"> cars-by-motor-v2</a> (developed by Antonio Suero Baeza)</li>
+        </ul>
+        <h3>DOCS API:</h3>
+        <ul>
+            <li>ANTONIO: <a href="http://sos2324-10.appspot.com/api/v1/cars-by-motor/docs"> cars-by-motor-V1 </a>, <a href="http://sos2324-10.appspot.com/api/v2/cars-by-motor/docs"> cars-by-motor-V2 </a> (developed by Antonio Suero Baeza)</li>
+        </ul>
+        <h3>FRONT-END:</h3>
+        <ul>
+            <li>ANTONIO:  <a href="http://sos2324-10.appspot.com/cars-by-motor"> cars-by-motor </a> (developed by Antonio Suero Baeza)</li>
+        </ul>
+    </div>
+</body>
+</html>

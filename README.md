@@ -14,4 +14,4 @@
 - **FRONT-END**:
     - ASB: [FrontEnd-ASB](http://sos2324-jul-asb.appspot.com/cars-by-motor) (developed by Antonio Suero Baeza)
 - **Docker**:
-  - docker run -p 12000:8080 -d "antsuebae03/sos2324-jul-asb:0.0.0"
+  - docker run -p 12000:8080 -d "antsuebae03/sos2324-jul-asb:0.0.2"

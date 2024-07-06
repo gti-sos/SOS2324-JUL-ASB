@@ -3,7 +3,7 @@
         <h2>Enlace al Video de Google Drive</h2>
         <p>
             Para ver el video, haz clic en el siguiente enlace:<br />
-            <a href="https://drive.google.com/file/d/1E4c0YCnzLhJ6byuz3BKUiOUDq1sXIAzJ/view?usp=sharing" target="_blank">Ver video en Google Drive</a>
+            <a href="https://drive.google.com/drive/folders/1FeCj8vZokfw6MwJGrYRbUEYumuceaVix?usp=sharing" target="_blank">Ver video en Google Drive</a>
         </p>
     </div>
 </div>

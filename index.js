@@ -1,5 +1,3 @@
-console.log("A");
-
 import express, { response } from "express";
 import bodyParser from "body-parser";
 
@@ -8,9 +6,6 @@ import { API_ASB_v2 } from "./backend/api-ASB_v2.js";
 
 //neDB
 import dataStore from "nedb";
-let db_TLR = new dataStore();
-let db_ASC = new dataStore();
-let db_MRF = new dataStore();
 let db_ASB = new dataStore();
 
 //Adaptador Svelte
@@ -48,7 +43,7 @@ API_ASB_v2(app, db_ASB);
 //Crear ruta estática para poder mostrar vídeos
 app.use('/videos', express.static('videos'))
 
-console.log("D");
+
 //Hacemos uso de proxy
 
 app.use("/proxyASB1", function (req, res) {
@@ -127,11 +122,10 @@ app.use(handler);
 // Establecemos subdirectorios de la web
 import path from "path";
 //const path = require('path');
-app.get('/', (req, res) => {
-    console.log("E");res.sendFile(path.join(__dirname, 'public', 'index.html'));
+app.get('/', (req, res) => {res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
-console.log("F");
+
 app.use("/", express.static("./public"));
 console.log(`Server listening on port ${PORT}`);
-console.log("G");
+
 

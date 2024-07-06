@@ -1,42 +1,28 @@
-<script>
-	const videos = [
-		{ src: '/videos/antsuebae.mp4', title: 'Video antsuebae' }
-	];
-</script>
-
 <div class="video-container">
-	{#each videos as video}
-		<div class="video-box">
-			<h2>{video.title}</h2>
-			<video controls>
-				<source type="video/mp4" src={video.src} />
-				Your browser does not support the video tag.
-			</video>
-		</div>
-	{/each}
+    <div class="video-box">
+        <h2>Enlace al Video de Google Drive</h2>
+        <p>
+            Para ver el video, haz clic en el siguiente enlace:<br />
+            <a href="https://drive.google.com/file/d/1E4c0YCnzLhJ6byuz3BKUiOUDq1sXIAzJ/view?usp=sharing" target="_blank">Ver video en Google Drive</a>
+        </p>
+    </div>
 </div>
 
-
 <style>
-	.video-container {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-around; /* Centra los elementos horizontalmente */
-		align-items: center; /* Centra los elementos verticalmente */
-		height: 100vh; /* Ocupa toda la altura de la pantalla */
-	}
+    .video-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        height: 100vh;
+    }
 
-	.video-box {
-		flex: 0 0 calc(50% - 10px);
-		border-radius: 15px;
-		box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-		margin-bottom: 20px;
-		padding: 10px;
-		text-align: center; /* Centra el texto de cada vídeo */
-	}
-
-	video {
-		width: 100%;
-		height: auto;
-	}
+    .video-box {
+        flex: 0 0 calc(50% - 10px);
+        border-radius: 15px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+        margin-bottom: 20px;
+        padding: 10px;
+        text-align: center;
+    }
 </style>
